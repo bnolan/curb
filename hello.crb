@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <style>
+      body{font-family: verdana}
+    </style>
+  </head>
+<body>
+  <h1>Hello <%= user->name %></h1>
+
+  <% 
+    list<Post *>::const_iterator iterator; 
+  %>
+  <ul>
+  <% for (iterator = posts.begin(); iterator != posts.end(); ++iterator){ %>
+    <% 
+      Post *post = *iterator; 
+    %>
+    <li><%= post->title.substr(0,10) + "..." %></li>
+  <% } %>
+  </ul>
+  
+  <p>
+    Page created at <%= now() %>.
+  </p>
+</body>
+</html>
